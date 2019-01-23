@@ -16,16 +16,26 @@ export default class App extends Component{
   gettingWeather= async (e)=>{
     e.preventDefault();
     const city=e.target.elements.city.value;
-    const api_url=await fetch(`http://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${API_KEY}&units=metric`);
-    const data=await api_url.json();
-    console.log(data)
-    this.setState({
-      temp:data.main.temp,
-      city:data.name,
-      sunrise:data.sys.sunrise,
-      sunset:data.sys.sunset,
-      error:""
-    })
+    if (city) {
+      const api_url = await fetch(`http://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${API_KEY}&units=metric`);
+      const data = await api_url.json();
+
+      let sunset=data.sys.sunset;
+      let sunrise=data.sys.sunrise;
+      let dataSS=new Date();
+      let dataSR=new Date();
+      dataSS.setTime(sunset);
+      dataSR.setTime(sunrise);
+      let data_ss=dataSS.getHours()+":"+dataSS.getMinutes()+":"+dataSS.getSeconds();
+      let data_sr=dataSR.getHours()+":"+dataSR.getMinutes()+":"+dataSR.getSeconds();
+      this.setState({
+        temp: data.main.temp,
+        city: data.name,
+        sunrise: data_sr,
+        sunset: data_ss,
+        error: ""
+      })
+    }
   };
   render() {
     return(
