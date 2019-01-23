@@ -36,19 +36,36 @@ export default class App extends Component{
         error: ""
       })
     }
+    else{
+      this.state={
+        temp:undefined,
+        city:undefined,
+        sunrise:undefined,
+        sunset:undefined,
+        error:"Input correct data"
+      };
+    }
   };
   render() {
     return(
-        <div>
-          <Info/>
-          <Form weatherGet={this.gettingWeather}/>
-          <Weather
-              temp={this.state.temp}
-              city={this.state.city}
-              sunrise={this.state.sunrise}
-              sunset={this.state.sunset}
-              error={this.state.error}
-          />
+        <div className="wrapper">
+          <div className="container">
+            <div className="row">
+              <div className="col-xs-5">
+                <Info/>
+              </div>
+              <div className="col-x5-7">
+                <Form weatherGet={this.gettingWeather}/>
+                <Weather
+                    temp={this.state.temp}
+                    city={this.state.city}
+                    sunrise={this.state.sunrise}
+                    sunset={this.state.sunset}
+                    error={this.state.error}
+                />
+              </div>
+            </div>
+          </div>
         </div>
     )
   }

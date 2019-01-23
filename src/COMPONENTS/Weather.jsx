@@ -1,18 +1,18 @@
 import React ,{Component} from "react";
 
-export default class App extends Component{
-    render() {
+const App=props=>{
         return(
             <div >
-                {this.props.city &&
-                    <div>
+                {props.city &&
+                <div>
                     <p>Component with weather</p>
-                    <p>Temperature in {this.props.city} = {this.props.temp}</p>
-                    <p>Sunrise := {this.props.sunrise}</p>
-                    <p>Sunset := {this.props.sunset}</p>
-                    </div>
+                    <p>Temperature in {props.city} = {props.temp}</p>
+                    <p>Sunrise := {props.sunrise}</p>
+                    <p>Sunset := {props.sunset}</p>
+                </div>
                 }
+                <p>{props.error}</p>
             </div>
         )
-    }
-}
+    };
+export default App;
