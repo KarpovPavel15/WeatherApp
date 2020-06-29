@@ -38,20 +38,16 @@ export const RootPage = () => {
     };
 
     return (
-        <div className="wrapper">
-            <div className="container">
-                <div className="row">
-                    <div className="col-xs-5">
-                        <Info/>
-                    </div>
-                    <div className="col-x5-7">
-                        <Form weatherGet={gettingWeather}/>
-                        <Weather
-                            city={state.city}
-                            listWeather={state.listWeather}
-                            error={state.error}
-                        />
-                    </div>
+        <div className="root-page">
+            <div className="root-page__container">
+                <div>
+                    <Info/>
+                    <Form weatherGet={gettingWeather}/>
+                    <Weather
+                        city={state.city}
+                        listWeather={state.listWeather}
+                        error={state.error}
+                    />
                 </div>
             </div>
         </div>

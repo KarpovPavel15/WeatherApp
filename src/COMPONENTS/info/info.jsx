@@ -1,10 +1,5 @@
+import './info.scss';
 import React from "react";
 
-const Info = () => {
-    return (
-        <div>
-            <h2>Weather</h2>
-        </div>
-    )
-};
+const Info = () => <div className="info">Weather</div>;
 export default Info;

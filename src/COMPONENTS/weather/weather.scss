@@ -1,0 +1,29 @@
+.weather {
+  &__list, &__area {
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__list {
+    width: 150px;
+    height: 350px;
+  }
+
+  &__othersDays {
+    display: flex;
+    flex-direction: row;
+    margin: 30px 0 30px 0;
+    background-color: cornflowerblue;
+  }
+
+  &__info {
+    padding: 0 30px 0 30px;
+    font-size: 25px;
+    outline: none;
+    text-align: center;
+  }
+}
+
+.data-time {
+  text-align: center;
+}
