@@ -1,8 +1,8 @@
-import './day-info.scss';
+import './weather-on-next-days.scss';
 import React from 'react';
 import { convertDate, convertToCels } from '../weather';
 
-export const DayInfo = props => {
+export const WeatherOnNextDays = props => {
     return props.weather.map(element =>
         <div className="day-info">
             <p>{`Weather on ${convertDate(element.dt_txt)}`}</p>

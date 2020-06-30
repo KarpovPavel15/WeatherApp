@@ -1,0 +1,24 @@
+.bm-overlay{
+  width: 0 !important;
+  top: 0;
+}
+.bm-burger-button{
+  button{
+    width: 20%!important;
+  }
+  display: none;
+}
+.bm-burger-bars{
+  display: none;
+}
+.bm-menu-wrap{
+  top: 0;
+  background-color: darkgoldenrod;
+}
+.bm-item{
+  outline: none;
+  &-list{
+    overflow-y: auto;
+  }
+}
+

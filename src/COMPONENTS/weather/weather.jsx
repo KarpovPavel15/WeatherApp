@@ -1,6 +1,6 @@
 import './weather.scss'
 import React, { useEffect, useState } from 'react';
-import { DayInfo } from '../dayInfo';
+import { WeatherOnNextDays } from '../weatherOnNextDays';
 import { SliderComponent } from '../slider';
 
 export const convertToCels = temp => Math.ceil(temp - 273);
@@ -48,7 +48,7 @@ const Weather = props => {
                         </SliderComponent>
                     </div>
                     : <div className="weather__othersDays">
-                        <DayInfo weather={element}/>
+                        <WeatherOnNextDays weather={element}/>
                     </div>
                 )
                 }

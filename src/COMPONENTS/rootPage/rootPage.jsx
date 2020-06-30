@@ -13,6 +13,7 @@ export const RootPage = () => {
         error: undefined
     });
 
+
     const gettingWeather = async (e) => {
         e.preventDefault();
         const city = e.target.elements.city.value;
