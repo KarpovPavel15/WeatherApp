@@ -10,7 +10,7 @@ const Info = () => {
         <div className="info">
             <p>Weather</p>
             <img src={settings} className="info__settings" alt="settings" onClick={toggleMenu}/>
-            <Settings isOpen={state}/>
+            <Settings isOpen={state} setMenu={toggleMenu}/>
         </div>
     )
 };

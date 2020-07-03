@@ -2,6 +2,8 @@ import './weather.scss'
 import React, { useEffect, useState } from 'react';
 import { WeatherOnNextDays } from '../weatherOnNextDays';
 import { SliderComponent } from '../slider';
+import { useDispatch } from 'react-redux';
+import { setCurrentTempRequestAction } from './actions/actions';
 
 export const convertToCels = temp => Math.ceil(temp - 273);
 export const convertDate = date => date.replace(/^(\d{4})-(\d{2})-(\d{2})/, '$3.$2.$1');
@@ -25,12 +27,18 @@ const Weather = props => {
 
     let [dataTime, setDataTime] = useState(new Date().toLocaleString());
     let weatherGroup = groupByDate(props.listWeather);
+    const dispatch = useDispatch();
+    
     useEffect(() => {
         setInterval(() => {
             setDataTime(new Date().toLocaleString())
         }, 1000);
 
     }, [dataTime]);
+
+    useEffect(()=>{
+       dispatch(setCurrentTempRequestAction())
+    },[]);
 
     return (
         <div className="weather">
